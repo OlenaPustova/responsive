@@ -93,6 +93,7 @@ body {
     border: 0;
     padding: 0;
     cursor: pointer;
+    display: none;
 }
 .btn-burger-line {
     width: 48px;
@@ -106,6 +107,8 @@ body {
     width: 48px;
     height: 5px;
     background: #000;
+    display: block;
+    position: absolute;
     cursor: pointer;
     outline: none;
     top: 0;
@@ -115,14 +118,8 @@ body {
     top: 26px;
 }
 .header .contact-form {
-
+display: none;
 }
-.menu-open .header .contact-form {
-    display: block;
-}
-
-
-
 
 
 
@@ -136,30 +133,40 @@ body {
 @media only screen
 and (min-width: 769px)
 and (max-width: 1200px) {
-    .logo svg *{
-        fill: #fff;
-    }
     .btn-burger {
         display: block;
     }
     .nav {
         display: none;
     }
-    .menu-open .header .contact-form {
-        display: block;
-    }
     .menu-open .header {
         background: #000;
+    }
+    .menu-open .logo svg * {
+        fill: #fff;
+    }
+    .menu-open .btn-burger .btn-burger-line,
+    .menu-open .btn-burger .btn-burger-line:before {
+        background: #fff;
+    }
+    .menu-open .btn-burger .btn-burger-line {
+        transform: rotate(45deg);
+    }
+    .menu-open .btn-burger .btn-burger-line:before {
+        transform: rotate(90deg);
+    }
+    .menu-open .btn-burger .btn-burger-line:after {
+        display: none;
+    }
+    .menu-open .header .contact-form {
+        display: block;
     }
 }
 
 /* mobile */
 @media only screen
-and (min-width: 320px)
+and (min-width: 0)
 and (max-width: 768px) {
-    .logo svg *{
-        fill: #fff;
-    }
     .btn-burger {
         display: block;
     }
@@ -173,5 +180,30 @@ and (max-width: 768px) {
     }
     .menu-open .header {
         background: #000;
+    }
+    .menu-open .logo {
+        margin: 0 0 80px auto;
+    }
+    /* .logo svg * {
+		fill: #fff;
+	} */
+    .menu-open .logo svg * {
+        fill: #fff;
+    }
+    .menu-open .header .contact-form {
+        display: block;
+    }
+    .menu-open .btn-burger .btn-burger-line,
+    .menu-open .btn-burger .btn-burger-line:before {
+        background: #fff;
+    }
+    .menu-open .btn-burger .btn-burger-line {
+        transform: rotate(45deg);
+    }
+    .menu-open .btn-burger .btn-burger-line:before {
+        transform: rotate(90deg);
+    }
+    .menu-open .btn-burger .btn-burger-line:after {
+        display: none;
     }
 }
